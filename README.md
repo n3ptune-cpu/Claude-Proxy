@@ -6,7 +6,7 @@ I have used Claude Opus 5.5 to help me write the router code since I obviously d
 <img width="1113" height="626" alt="Claude Code running on a local model" src="https://github.com/user-attachments/assets/7dc7974a-3ab7-41b4-b00f-8cee92980f17" />
 
 ```
-Claude Code -> "Anthropic API" -> router.js (:4000)  -> "OpenAI API" ->  LM Studio (:8805/v1)
+Claude Code -> "Anthropic API" -> router.js (:4000) -> "OpenAI API" ->  LM Studio (:8805/v1)
 ```
 (The API quoated since they aren't literally those APIs rather acting as like it for this to work smoothly)
 
