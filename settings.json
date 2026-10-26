@@ -1,8 +1,8 @@
 {
-  "model": "MODEL-GOES-HERE",
+  "model": "qwen3.6-35b-a3b-claude-4.7-opus-reasoning-distilled-apex",
   "env": {
-    "ANTHROPIC_BASE_URL": "ROUTER-IP-GOES-HERE",
-    "ANTHROPIC_AUTH_TOKEN": "GENERATED-TOKEN-GOES-HERE",
+    "ANTHROPIC_BASE_URL": "http://100.127.197.41:4000",
+    "ANTHROPIC_AUTH_TOKEN": "sk-local-cbe9632ab04386d1969324848e076c91479c478b907f0d33",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "25"
   },
