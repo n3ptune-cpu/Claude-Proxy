@@ -20,7 +20,7 @@ My setup runs on Windows, so treat the configs here as a baseline and adjust the
 
 ## Model
 
-The model that came closest to Claude on my hardware (RTX 2080 Super 8 GB, 24 GB RAM, i7-8700K  is `qwen3.6-35b-a3b-claude-4.7-opus-reasoning-distilled-apex`. I'm not sharing my exact model settings because they depend on your hardware, but these are to take into consideration:
+The model that came closest to Claude on my hardware (RTX 2080 Super 8 GB, 24 GB RAM, i7-8700K)  is `qwen3.6-35b-a3b-claude-4.7-opus-reasoning-distilled-apex`. I'm not sharing my exact model settings because they depend on your hardware, but these are to take into consideration:
 
 - **Context length of at least 32K, ideally 64K.** Claude Code's system prompt and tool list alone are about 20K tokens.
 - **Turn off "Truncate Middle"** (context overflow). It silently cuts Claude Code's prompt, and the model starts inventing tools and commands.
