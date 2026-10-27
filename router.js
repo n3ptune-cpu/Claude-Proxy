@@ -45,6 +45,13 @@ function describeRequest(p) {
 const textOf = (c) =>
   typeof c === 'string' ? c : (c || []).map((b) => (b.type === 'text' ? b.text : '')).join('');
 
+// Anthropic image block -> OpenAI image_url part (null if not an image / unsupported source)
+const imagePart = (b) => {
+  const s = b.type === 'image' && b.source;
+  const url = s?.type === 'base64' ? `data:${s.media_type};base64,${s.data}` : s?.type === 'url' ? s.url : null;
+  return url ? { type: 'image_url', image_url: { url } } : null;
+};
+
 function readBody(req) {
   return new Promise((resolve, reject) => {
     const chunks = [];
@@ -86,20 +93,22 @@ function toOpenAIMessages(p) {
     const blocks = m.content || [];
 
     if (m.role === 'user') {
-      // tool_result blocks become role:"tool" messages (must come right after the assistant tool_calls)
+      const parts = [];
+      // tool_result blocks become role:"tool" messages (must come right after the assistant tool_calls).
+      // role:"tool" can't carry images, so images inside a tool_result move into the user message below.
       for (const b of blocks.filter((b) => b.type === 'tool_result')) {
         const body = typeof b.content === 'string' ? b.content : textOf(b.content);
+        const imgs = Array.isArray(b.content) ? b.content.map(imagePart).filter(Boolean) : [];
+        parts.push(...imgs);
         out.push({
           role: 'tool',
           tool_call_id: b.tool_use_id,
-          content: (b.is_error ? '[error] ' : '') + (body || ''),
+          content: (b.is_error ? '[error] ' : '') + (body || '') + (imgs.length ? `${body ? '\n' : ''}[${imgs.length} image(s) attached below]` : ''),
         });
       }
-      const parts = [];
       for (const b of blocks) {
         if (b.type === 'text' && b.text) parts.push({ type: 'text', text: b.text });
-        else if (b.type === 'image' && b.source?.type === 'base64')
-          parts.push({ type: 'image_url', image_url: { url: `data:${b.source.media_type};base64,${b.source.data}` } });
+        else if (imagePart(b)) parts.push(imagePart(b));
       }
       if (parts.length) {
         const allText = parts.every((x) => x.type === 'text');
