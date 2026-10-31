@@ -1,12 +1,9 @@
-<img width="1920" height="1050" alt="image" src="https://github.com/user-attachments/assets/8c34dc1d-7365-4aa6-bb63-064d31e888a6" />
-
-
 # Claude-Proxy
 
 A small Node.js router that lets **Claude Code** run on a **locally hosted model** served by [llama.cpp](https://github.com/ggml-org/llama.cpp)'s `llama-server`. Claude Code speaks the Anthropic Messages API; the router translates each request to the OpenAI Chat Completions format that `llama-server` understands, and translates the answer (text, tool calls, reasoning) back.
 I have used Claude Opus 5.5 to help me write the router code since I obviously don't know JavaScript.
 
-<img width="1113" height="626" alt="Claude Code running on a local model" src="https://github.com/user-attachments/assets/7dc7974a-3ab7-41b4-b00f-8cee92980f17" />
+<img width="1113" height="626" alt="Claude Code running on a local model" src="https://github.com/user-attachments/assets/8c34dc1d-7365-4aa6-bb63-064d31e888a6" />
 
 ```
 Claude Code  --Anthropic API-->  router.js (:4000)  --OpenAI API-->  llama-server (127.0.0.1:8805/v1)
