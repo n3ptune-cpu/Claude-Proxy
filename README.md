@@ -55,7 +55,7 @@ Generate the token with:
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
-The same token goes into Claude Code's settings in step 5. **Never commit `.env`**; it's in `.gitignore`.
+The same token goes into Claude Code's settings in step 5.
 
 ### 3. Configure llama-server
 
