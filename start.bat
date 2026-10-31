@@ -1,1 +1,1 @@
-powershell -ExecutionPolicy Bypass -File D:\LocalAI\claude-proxy\start.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0start.ps1" %*
