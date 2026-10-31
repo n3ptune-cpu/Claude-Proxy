@@ -63,7 +63,7 @@ Open `start-llama.ps1` and set `$llama` (folder with `llama-server.exe`), `$mode
 
 ### 4. Start everything
 
-Double-click `start-all.bat` (or run `start-all.ps1`). It opens one window for `llama-server` and one for the router. Press Enter in the launcher window to stop both.
+Double-click `start.bat` (or run `start.ps1`). It opens one window for `llama-server` and one for the router. Press Enter in the launcher window to stop both.
 
 You can also start them by hand: `.\start-llama.ps1` in one window, `node router.js` in another.
 
