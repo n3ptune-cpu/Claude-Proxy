@@ -1,16 +1,17 @@
 {
   "model": "MODEL-GOES-HERE",
   "env": {
-    "ANTHROPIC_BASE_URL": "ROUTER-IP-GOES-HERE",
+    "ANTHROPIC_BASE_URL": "http://ROUTER-IP:4000",
     "ANTHROPIC_AUTH_TOKEN": "GENERATED-TOKEN-GOES-HERE",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "25"
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "25",
+    "ENABLE_TOOL_SEARCH": "false"
   },
   "permissions": {
     "allow": [
       "PowerShell(Get-*)",
-	  "mcp__searxng__searxng_web_search",
-	  "mcp__searxng__web_url_read",
+      "mcp__searxng__searxng_web_search",
+      "mcp__searxng__web_url_read",
       "mcp__duckduckgo__duckduckgo_web_search"
     ],
     "deny": ["Agent", "WebSearch"]
