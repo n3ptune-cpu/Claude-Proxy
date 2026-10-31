@@ -3,7 +3,7 @@
 # Press Enter in this window to stop everything.
 
 # ---------- edit these ----------
-$llamaScript = Join-Path $PSScriptRoot 'start-llama.ps1'  # llama-server start script
+$llamaScript = 'start-llama.ps1'  # llama-server start script
 $caffeinate  = $true                                      # $false = let the PC sleep as usual
 
 # ---------- start ----------
