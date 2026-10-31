@@ -29,8 +29,7 @@ My setup runs on Windows (RTX 2080 Super 8 GB, 24 GB RAM, i7-8700K), so treat th
 | `router.js` | The router |
 | `.env.example` | Router settings template; copy to `.env` |
 | `start-llama.ps1` | Starts `llama-server` with the flags below; edit the paths at the top |
-| `start-all.ps1` / `start-all.bat` | Starts the router and `start-llama.ps1` in their own windows (and `Caffeinate.ps1` if present); Enter stops everything |
-| `Caffeinate.ps1` | Keeps the PC from sleeping while it runs |
+| `start.ps1` / `start.bat` | Starts the router and `start-llama.ps1` in their own windows; Enter stops everything |
 | `settings.json` | Example Claude Code settings |
 | `claude.md` | Example `CLAUDE.md` for Windows |
 
